@@ -13,8 +13,8 @@ const Login = () => {
                 <div className="text-center lg:text-left rounded">
                     <img className='w-3/4' src={login} alt="" />
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <h1 className="text-5xl font-bold mx-auto">Please Login</h1>
+                <div className="card flex-shrink-0 w-full py-10 max-w-sm shadow-2xl bg-base-100">
+                    <h1 className="text-5xl font-bold mx-auto">Login</h1>
                     <form onSubmit={handleLogin} className="card-body">
                         <div className="form-control">
                             <label className="label">
@@ -28,13 +28,14 @@ const Login = () => {
                             </label>
                             <input type="text" placeholder="password" className="input input-bordered" />
                             <label className="label">
-                                <Link href="#" className="label-text-alt link link-hover">Don't Have an account? Please signup </Link>
+                               <a href="/"> forgot password? </a>
                             </label>
                         </div>
                         <div className="form-control mt-6">
                             <input className='btn btn-primary' type="submit" value='Login' />
                         </div>
                     </form>
+                    <p className='mx-auto'>New to our website? Please <Link className='text-yellow-600' to='/signup'>SignUp</Link></p>
                 </div>
             </div>
         </div>
