@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
 import { current } from 'daisyui/src/colors';
 
@@ -17,6 +17,9 @@ const AuthProvider = ({children}) => {
         return createUserWithEmailAndPassword(auth, email, password);
     };
 
+    const login = (email, password) =>{
+        return signInWithEmailAndPassword(auth, email, password);
+    }
 
     useEffect(() =>{
         const unsubscribe = onAuthStateChanged(auth, currentUser =>{
@@ -34,7 +37,7 @@ const AuthProvider = ({children}) => {
         user,
         loading,
         createUser,
-
+        login,
     }
 
     return (
