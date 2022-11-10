@@ -3,7 +3,7 @@ import React from 'react';
 const PhysicalInfo = () => {
     return (
         <div>
-            <div className="hero p-10 bg-base-200">
+            <div className="hero p-10 bg-base-200 container mx-auto">
                 <div className="hero-content text-center">
                     <div className="max-w-md">
                         <h1 className="text-5xl font-bold">Physical Examination</h1>
