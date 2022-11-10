@@ -12,8 +12,8 @@ const Header = () => {
     }
 
     const navbarItems = <>
-        <li><Link className='font-semibold text-2xl mr-6 btn btn-outline btn-success border-none' to='/home'>Home</Link></li>
-        <li><Link className='font-semibold text-2xl mr-6 btn btn-outline btn-success border-none' to='/blog'>Blog</Link></li>
+        <li><Link className='font-semibold text-2xl mr-6 ' to='/home'>Home</Link></li>
+        <li><Link className='font-semibold text-2xl mr-6 ' to='/blog'>Blog</Link></li>
         
         {
             user?.email ?
@@ -25,9 +25,11 @@ const Header = () => {
                 </>
                 
                 :
-                <li><Link className='font-semibold text-2xl mr-6 btn btn-outline btn-success border-none' to='/login'>login</Link></li>
+                <>
+                    <li><Link className='font-semibold text-2xl mr-6 ' to='/login'>login</Link></li>
+                    <li><Link className='font-semibold text-2xl mr-6 ' to='/signup'>SignUp</Link></li>
+                </>
         }
-        <li><Link className='font-semibold text-2xl mr-6 btn btn-outline btn-success border-none' to='/signup'>SignUp</Link></li>
     </>
     return (
         <div className="navbar container mx-auto py-10">
@@ -40,15 +42,12 @@ const Header = () => {
                         {navbarItems}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl">daisyUI</Link>
+                <Link to='/' className="btn btn-ghost normal-case text-xl">Dr. Walid</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     {navbarItems}
                 </ul>
-            </div>
-            <div className="navbar-end">
-                <a href='/' className="btn">Get started</a>
             </div>
         </div>
     );
