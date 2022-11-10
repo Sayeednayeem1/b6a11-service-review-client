@@ -7,7 +7,7 @@ const Reviews = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${user?.email}`)
+        fetch(`https://assignment-server-ten.vercel.app/orders?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [user?.email])
@@ -15,7 +15,7 @@ const Reviews = () => {
     const handleDelete = id =>{
         const proceed = window.confirm('Are you sure you wanna delete? this Order?');
         if(proceed){
-            fetch(`http://localhost:5000/orders/${id}`, {
+            fetch(`https://assignment-server-ten.vercel.app/orders/${id}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())
@@ -31,7 +31,7 @@ const Reviews = () => {
     };
 
     const handleUpdate = id =>{
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://assignment-server-ten.vercel.app/orders/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

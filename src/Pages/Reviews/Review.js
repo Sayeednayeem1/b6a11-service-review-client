@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const Review = ({order, handleDelete, handleUpdate}) => {
     const {serviceName, _id, status, price, customer, email, comment, ratings} = order;
-    const [orderService, setService] = useState({});
+    // const [orderService, setService] = useState({});
 
     // useEffect(() =>{
     //     fetch('http://localhost:5000/services/${service}')
