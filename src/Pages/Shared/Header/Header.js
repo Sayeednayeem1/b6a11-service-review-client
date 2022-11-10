@@ -9,6 +9,7 @@ const Header = () => {
             <Link className='font-semibold text-2xl mr-6 btn btn-outline btn-success border-none' to='/blog'>Blog</Link>
             <Link className='font-semibold text-2xl mr-6 btn btn-outline btn-success border-none' to='/login'>login</Link>
             <Link className='font-semibold text-2xl mr-6 btn btn-outline btn-success border-none' to='/signup'>SignUp</Link>
+            <Link className='font-semibold text-2xl mr-6 btn btn-outline btn-success border-none' to='/reviews'>Reviews</Link>
         </div>
     );
 };

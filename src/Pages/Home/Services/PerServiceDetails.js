@@ -45,6 +45,7 @@ const PerServiceDetails = () => {
             .catch(error => console.error(error));
     }
 
+
     return (
         <div>
             <div className="hero bg-base-200 mx-auto container mt-10 mb-10">

@@ -1,6 +1,6 @@
 [
     {
-        "_id": "01",
+        
         "service_id": "04",
         "title": "Children’s routine checkups",
         "img": "https://i.ibb.co/TPsWQj5/usman-yousaf-p-Trhfmj2j-DA-unsplash.jpg",
@@ -26,7 +26,7 @@
         ]
     },
     {
-        "_id": "02",
+        
         "service_id": "05",
         "title": "Women’s health care",
         "img": "https://i.ibb.co/NLbbNz7/national-cancer-institute-L8t-WZT4-Cc-VQ-unsplash.jpg",
@@ -52,7 +52,7 @@
         ]
     },
     {
-        "_id": "03",
+        
         "service_id": "01",
         "title": "Men’s health care",
         "img": "https://i.ibb.co/zhy8twx/humberto-chavez-FVh-yq-LR9e-A-unsplash.jpg",
@@ -78,7 +78,7 @@
         ]
     },
     {
-        "_id": "04",
+        
         "service_id": "02",
         "title": "Mental health care",
         "img": "https://i.ibb.co/QY00fnN/patty-brito-Y-3-Dt0us7e0-unsplash.jpg",
@@ -104,7 +104,7 @@
         ]
     },
     {
-        "_id": "05",
+        
         "service_id": "03",
         "title": "Sports physicals",
         "img": "https://i.ibb.co/9gJjxLX/national-cancer-institute-tl447mekwu-Q-unsplash.jpg",
@@ -130,7 +130,7 @@
         ]
     },
     {
-        "_id": "06",
+        
         "service_id": "06",
         "title": "Chronic disease management",
         "img": "https://i.ibb.co/Rh9XDBb/accuray-av4-If-CZG8-Ic-unsplash.jpg",
