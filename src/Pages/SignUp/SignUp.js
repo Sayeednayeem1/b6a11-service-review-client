@@ -36,6 +36,7 @@ const SignUp = () => {
         .then( result =>{
             const user = result.user;
             console.log(user);
+            Navigate(from, { replace: true });
         })
         .catch(error => console.error(error));
     }
