@@ -3,20 +3,34 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogout = () =>{
+        logOut()
+        .then()
+        .catch( error => console.error(error));
+    }
+
     const navbarItems = <>
         <li><Link className='font-semibold text-2xl mr-6 btn btn-outline btn-success border-none' to='/home'>Home</Link></li>
         <li><Link className='font-semibold text-2xl mr-6 btn btn-outline btn-success border-none' to='/blog'>Blog</Link></li>
+        
         {
             user?.email ?
-                <li><Link className='font-semibold text-2xl mr-6 btn btn-outline btn-success border-none' to='/reviews'>Reviews</Link></li>
+                <>
+                    <li><Link className='font-semibold text-2xl mr-6 btn btn-outline btn-success border-none' to='/reviews'>Reviews</Link></li>
+                    <li>
+                        <button onClick={handleLogout} className='border-none btn-outline btn-ghost'>Logout</button>
+                    </li>
+                </>
+                
                 :
                 <li><Link className='font-semibold text-2xl mr-6 btn btn-outline btn-success border-none' to='/login'>login</Link></li>
         }
         <li><Link className='font-semibold text-2xl mr-6 btn btn-outline btn-success border-none' to='/signup'>SignUp</Link></li>
     </>
     return (
-        <div className="navbar container mx-auto">
+        <div className="navbar container mx-auto py-10">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

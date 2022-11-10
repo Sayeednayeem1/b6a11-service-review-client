@@ -2,7 +2,7 @@ import { error } from 'daisyui/src/colors';
 import React, { useContext } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const PerServiceDetails = () => {
@@ -71,6 +71,9 @@ const PerServiceDetails = () => {
                     </div>
                     <ToastContainer className="toast toast-center mt-96"/>
                 </form>
+            </div>
+            <div className='container text-center mb-10 mt-10'>
+                <p className='text-3xl text-warning'>Please <Link to='/login' className='text-yellow-800'>Login</Link>  to see Your Order and review </p>
             </div>
         </div>
     );

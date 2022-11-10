@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const Review = ({order}) => {
+const Review = ({order, handleDelete}) => {
     const {serviceName,_id, price, customer, email, comment, ratings} = order;
     const [orderService, setService] = useState({});
 
@@ -12,18 +12,6 @@ const Review = ({order}) => {
 
 
 
-    const handleDelete = id =>{
-        const proceed = window.confirm('Are you sure you wanna delete? this Order?');
-        if(proceed){
-            fetch(`http://localhost:5000/orders/${id}`, {
-                method: 'DELETE'
-            })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-            })
-        }
-    }
     
     
     return (

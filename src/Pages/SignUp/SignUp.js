@@ -1,11 +1,16 @@
 import React, { useContext } from 'react';
-import { Link, } from 'react-router-dom';
+import { Link, useLocation, useNavigate, } from 'react-router-dom';
 import login from '../../assets/Images/login.png';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const SignUp = () => {
 
-    const {createUser} = useContext(AuthContext);
+    const { createUser } = useContext(AuthContext);
+
+    const location = useLocation();
+    const Navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || '/';
 
     const handleSignUp = event => {
         event.preventDefault();
@@ -14,11 +19,12 @@ const SignUp = () => {
         const password = form.password.value;
 
         createUser(email, password)
-        .then( result =>{
-            const user = result.user;
-            console.log(user);
-        })
-        .catch( error => console.error(error));
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                Navigate(from, { replace: true });
+            })
+            .catch(error => console.error(error));
     }
     return (
         <div>
@@ -40,7 +46,7 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name='email' placeholder="email" className="input input-bordered" required/>
+                                <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
