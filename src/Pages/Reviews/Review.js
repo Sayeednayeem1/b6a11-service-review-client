@@ -28,11 +28,7 @@ const Review = ({order}) => {
     
     return (
         <tr>
-            <th>
-                <label>
-                    <button onClick={() => handleDelete(_id)} className='btn btn-ghost'>X</button>
-                </label>
-            </th>
+            
             <td>
                 <div className="flex items-center space-x-3">
                     
@@ -50,6 +46,11 @@ const Review = ({order}) => {
             <td>Ratings: {ratings}</td>
             <th>
                 <button className="btn btn-ghost btn-xs">{email}</button>
+            </th>
+            <th>
+                <label>
+                    <button onClick={() => handleDelete(_id)} className='btn btn-ghost'>X</button>
+                </label>
             </th>
         </tr>
     );

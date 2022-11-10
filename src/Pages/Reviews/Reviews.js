@@ -24,6 +24,7 @@ const Reviews = () => {
                             <th>Name</th>
                             <th>Ratings</th>
                             <th>Email</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
