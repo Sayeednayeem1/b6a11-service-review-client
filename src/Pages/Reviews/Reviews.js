@@ -28,6 +28,29 @@ const Reviews = () => {
                 }
             })
         }
+    };
+
+    const handleUpdate = id =>{
+        fetch(`http://localhost:5000/orders/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({status: 'approved'})
+        })
+        .then( res => res.json())
+        .then(data => {
+            console.log(data);
+            if (data.modifiedCount > 0) {
+                const remaining = orders.filter(odr => odr._id !== id);
+                const settling = orders.find(odr => odr._id === id);
+                settling.status = "Approved"
+                
+                const newOrders = [settling, ...remaining];
+                setOrders(newOrders);
+            }
+
+        })
     }
     
 
@@ -44,6 +67,7 @@ const Reviews = () => {
                             <th>Ratings</th>
                             <th>Email</th>
                             <th>Delete</th>
+                            <th>Update</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -53,6 +77,7 @@ const Reviews = () => {
                                 key={order._id}
                                 order={order}
                                 handleDelete={handleDelete}
+                                handleUpdate={handleUpdate}
                             
                             ></Review>)
                         }
